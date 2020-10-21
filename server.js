@@ -129,7 +129,7 @@ const PORT = process.env.PORT;
 var server = app.listen(PORT, function(err) {
     if (err) return console.log(err);
     console.log("Listening on adress " + server.address().address + ":" + server.address().port)
-    console.log("changes after commit")
+    console.log("Server Started")
 });
 
 
