@@ -1,0 +1,28 @@
+{
+  "name": "esp_weatherstation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "devmon": "^0.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "start.js",
+    "start": "node start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PRGeeesus/ESP_WeatherStation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PRGeeesus/ESP_WeatherStation/issues"
+  },
+  "homepage": "https://github.com/PRGeeesus/ESP_WeatherStation#readme"
+}
