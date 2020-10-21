@@ -35,17 +35,17 @@ var humiCache = []
 var GlobalPreviosDate = "";
 
 app.get('/main',function(req,res){
-    var path = __dirname + '/main.js'
+    var path = __dirname + 'client/main.js'
     res.sendFile(path);
 });
 app.get('/styles',function(req,res){
-    var path = __dirname + '/styles.css'
+    var path = __dirname + 'client/styles.css'
     res.sendFile(path);
 });
 
 
 app.get('/',function(req,res){
-    var path = __dirname + '/index.html'
+    var path = __dirname + 'client/index.html'
     res.sendFile(path);
 });
 

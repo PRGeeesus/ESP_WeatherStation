@@ -18,7 +18,9 @@ tempMax = 32
 tempMin = 18
 
 
-ALLDATA_URL = 'http://192.168.178.26:5000/alldata';
+//ALLDATA_URL = 'http://192.168.178.26:5000/alldata';
+ALLDATA_URL = "esp-weather-station.vercel.app/alldata"
+
 fetch(ALLDATA_URL).then(function(response) {
     // The response is a Response instance.
     // You parse the data into a useable format using `.json()`
@@ -92,7 +94,8 @@ function HideCanvas(){
     }
 }
 //API_URL = 'http://127.0.0.1:5000/graphData'
-API_URL = 'http://192.168.178.26:5000/graphData';
+//API_URL = 'http://192.168.178.26:5000/graphData';
+API_URL = "esp-weather-station.vercel.app/graphData"
 
 const ADDRESS = "192.168.178.26";
 
