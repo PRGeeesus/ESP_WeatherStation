@@ -2,7 +2,7 @@
   "name": "esp_weatherstation",
   "version": "1.0.0",
   "description": "",
-  "main": "start.js",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
@@ -12,8 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "start.js",
-    "start": "node start.js"
+    "test": "server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
