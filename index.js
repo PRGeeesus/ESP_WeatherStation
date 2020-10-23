@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 
 //const ADDRESS = "192.168.178.26";
-const ADDRESS = "127.0.0.1";
+//const ADDRESS = "127.0.0.1";
 
 var labels = []
 var Temperature = []
@@ -127,7 +127,7 @@ const PORT = process.env.PORT || 5000;
 //const PORT = process.env.PORT;
 
 
-var server = app.listen(PORT,ADDRESS, function(err) {
+var server = app.listen(PORT, function(err) {
     if (err) return console.log(err);
     console.log("Listening on adress " + server.address().address + ":" + server.address().port)
     console.log("Server Started")
