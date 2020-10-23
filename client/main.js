@@ -79,8 +79,8 @@ function hideCanvasSettings(){
 
 function clearData()
 {
-    myChart.data.datasets[0] = []
-    myChart.data.datasets[1] = []
+    myChart.data.datasets[0].data = []
+    myChart.data.datasets[1].data = []
     gloablTempData = []
     gloablHumiData = []
     myChart.update();
