@@ -1,8 +1,6 @@
 const express = require("express");
 //const cors = require('cors');
 var bodyParser = require('body-parser')
-
-
 const app = express();
 
 app.use(function (req, res, next) {
@@ -24,6 +22,9 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
 
+//const ADDRESS = "192.168.178.26";
+const ADDRESS = "127.0.0.1";
+
 var labels = []
 var Temperature = []
 var Humidity = []
@@ -35,17 +36,17 @@ var humiCache = []
 var GlobalPreviosDate = "";
 
 app.get('/main',function(req,res){
-    var path = __dirname + 'client/main.js'
+    var path = __dirname + '/client/main.js'
     res.sendFile(path);
 });
 app.get('/styles',function(req,res){
-    var path = __dirname + 'client/styles.css'
+    var path = __dirname + '/client/styles.css'
     res.sendFile(path);
 });
 
 
 app.get('/',function(req,res){
-    var path = __dirname + 'client/index.html'
+    var path = __dirname + '/client/index.html'
     res.sendFile(path);
 });
 
@@ -70,7 +71,8 @@ app.post('/data',(req,res)=>{
     //console.log(req.protocol)
     //console.log(req.get('Content-Type'))
     //console.log(req.hostname)
-    //console.log(req.body)
+    console.log("Getting data")
+    console.log(req.body)
     const {time,Temp,Humi } = req.body;
     if (time == "nan")
     {	
@@ -116,17 +118,16 @@ app.post('/data',(req,res)=>{
 // catch all unrouted errors
 
 app.all('*', function(req, res) {
-    throw new Error("Bad request")
     console.log("Bad request")
+    console.log(req)
+    throw new Error("Bad request")
 })
 
-//const PORT = process.env.PORT || 8888;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
+//const PORT = process.env.PORT;
 
-//const ADDRESS = "192.168.178.26";
-//const ADDRESS = "127.0.0.1";
 
-var server = app.listen(PORT, function(err) {
+var server = app.listen(PORT,ADDRESS, function(err) {
     if (err) return console.log(err);
     console.log("Listening on adress " + server.address().address + ":" + server.address().port)
     console.log("Server Started")

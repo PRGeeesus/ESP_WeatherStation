@@ -17,9 +17,19 @@ humMin = 40
 tempMax = 32
 tempMin = 18
 
+//HOST = "http://192.168.178.26:5000"
+//HOST = "http://127.0.0.1:5000";
+HOST = "https://esp-data-logger.herokuapp.com/"
 
-//ALLDATA_URL = 'http://192.168.178.26:5000/alldata';
-ALLDATA_URL = "esp-weather-station.vercel.app/alldata"
+
+ALLDATA_URL = HOST + "/alldata";
+//ALLDATA_URL = "esp-weather-station.vercel.app/alldata"
+
+API_URL = HOST + '/graphData';
+//API_URL = 'http://192.168.178.26:5000/graphData';
+//API_URL = "esp-weather-station.vercel.app/graphData"
+
+const ADDRESS = "192.168.178.26";
 
 fetch(ALLDATA_URL).then(function(response) {
     // The response is a Response instance.
@@ -93,11 +103,7 @@ function HideCanvas(){
         canvasElement.style.display = "none";
     }
 }
-//API_URL = 'http://127.0.0.1:5000/graphData'
-//API_URL = 'http://192.168.178.26:5000/graphData';
-API_URL = "esp-weather-station.vercel.app/graphData"
 
-const ADDRESS = "192.168.178.26";
 
 UPDATE_INTERVAL = 10000
 updating_interval = window.setInterval(updataData, UPDATE_INTERVAL);
