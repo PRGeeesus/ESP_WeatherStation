@@ -3,6 +3,7 @@ var canvasElement = document.getElementById('container1')
 
 var hideTempButton = document.getElementById('hideTemp').onclick = hideTemperature
 var hideHumiButton = document.getElementById('hideHumi').onclick = hideHumidity
+var clearDataButton = document.getElementById('ClearData').onclick = clearData
 var nrDataSamplesShow = document.getElementById('nrDataSamples')
 
 var hideCanvasSettingsButton = document.getElementById('hideCanvasSettings').onclick = hideCanvasSettings
@@ -74,6 +75,20 @@ function hideCanvasSettings(){
     } else {
         canvasSettingsDiv.hidden = false;
     }
+}
+
+function clearData()
+{
+    myChart.data.datasets[0] = []
+    myChart.data.datasets[1] = []
+    gloablTempData = []
+    gloablHumiData = []
+    myChart.update();
+    console.log("Cleared All Data")
+    console.log(myChart.data.datasets[0])
+    console.log(myChart.data.datasets[1])
+    console.log(gloablTempData)
+    console.log(gloablHumiData)
 }
 
 function hideTemperature(){
