@@ -51,6 +51,12 @@ app.get('/',function(req,res){
     res.sendFile(path);
 });
 
+app.get('/favicon.ico',function(req,res){
+    var path = __dirname + '/client/favicon.ico'
+    console.log("Request to favicon.ico from:" + req.headers.referer)
+    res.sendFile(path);
+});
+
 app.get('/alldata',function(req,res){
     res.send({'labels': [labels],'Temperature': [Temperature],'Humidity':[Humidity]})
     humiCache = [];
