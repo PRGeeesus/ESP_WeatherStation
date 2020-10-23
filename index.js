@@ -84,7 +84,7 @@ app.post('/data',(req,res)=>{
         
         // only display date if there was a change in date
         if(date == GlobalPreviosDate){ 
-            console.log("same Date");
+            //console.log("same Date");
             var realtime = currenttime;
         }
         else{
