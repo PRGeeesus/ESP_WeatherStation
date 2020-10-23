@@ -47,6 +47,7 @@ app.get('/styles',function(req,res){
 
 app.get('/',function(req,res){
     var path = __dirname + '/client/index.html'
+    console.log("Request to / from:" + req.headers.referer)
     res.sendFile(path);
 });
 
@@ -119,8 +120,8 @@ app.post('/data',(req,res)=>{
 
 app.all('*', function(req, res) {
     console.log("Bad request")
-    console.log(req)
-    throw new Error("Bad request")
+    //console.log(req)
+    //throw new Error("Bad request")
 })
 
 const PORT = process.env.PORT || 5000;
