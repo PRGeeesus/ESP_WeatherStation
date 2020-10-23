@@ -19,7 +19,7 @@ tempMin = 18
 
 //HOST = "http://192.168.178.26:5000"
 //HOST = "http://127.0.0.1:5000";
-HOST = "https://esp-data-logger.herokuapp.com/"
+HOST = "https://esp-data-logger.herokuapp.com"
 
 
 ALLDATA_URL = HOST + "/alldata";
