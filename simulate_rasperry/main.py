@@ -5,6 +5,8 @@ from datetime import datetime
 #url = 'https://wool-infrequent-domain.glitch.me/data'
 #url = 'http://127.0.0.1:5000/data'
 #url = 'http://192.168.178.26:5000/data'
+
+
 url = "https://factual-temporal-alligator.glitch.me/data";
 
 maxTemp = 32

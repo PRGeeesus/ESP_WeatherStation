@@ -13,10 +13,10 @@ var gloablTempData = []
 var gloablHumiData = []
 var globalLabels = []
 
-humMax = 80
-humMin = 40
-tempMax = 32
-tempMin = 18
+humMax = 75
+humMin = 50
+tempMax = 26
+tempMin = 19
 
 //HOST = "http://192.168.178.26:5000"
 //HOST = "http://127.0.0.1:5000";
@@ -120,7 +120,7 @@ function HideCanvas(){
 }
 
 
-UPDATE_INTERVAL = 10000
+UPDATE_INTERVAL = 20000
 updating_interval = window.setInterval(updataData, UPDATE_INTERVAL);
 var updateIntervalSelectOr = document.getElementById('updateIntervalSelect')
 updateIntervalSelectOr.onchange = updateInterval
@@ -194,7 +194,7 @@ fetch(API_URL).then(function(response) {
         //console.log(data.Humidity[0]);
         console.log("Getting new data from Server: " + String(data.labels[0].length) + " datapoints" )
 
-        for (var i = 0; i < data.labels[0].length; i++) {
+        for (var i = 0; i < data.labels[0].length; i++){
             var temptemp = data.Temperature[0][i]
             var temphumi = data.Humidity[0][i]
             //console.log(temptemp)
@@ -215,8 +215,7 @@ fetch(API_URL).then(function(response) {
         nrDataSamplesShow.innerHTML  = String(globalLabels.length) + " data Samples";
         myChart.update();
     }
-    else
-    {
+    else{
         console.log("No Data found")
     }
   });
@@ -225,8 +224,8 @@ fetch(API_URL).then(function(response) {
 function updateDatainChart(chart,temp,humi) {
     chart.data.datasets[0].data = temp
     chart.data.datasets[1].data = humi
-
 }
+
 function updataLabelsinChart(chart,labels){
     chart.data.labels = labels
 }

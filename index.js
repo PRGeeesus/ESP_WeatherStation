@@ -52,7 +52,7 @@ app.get('/',function(req,res){
 });
 
 app.get('/favicon.ico',function(req,res){
-    var path = __dirname + '/client/favicon.ico'
+    var path = __dirname + '/icons/favicon.ico'
     console.log("Request to favicon.ico from:" + req.headers.referer)
     res.sendFile(path);
 });
